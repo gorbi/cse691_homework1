@@ -37,16 +37,17 @@ z_2[0, :] = 7
 #####################################################
 # 3. Set all the elements in second column of z to 9.
 # Python
-
+for i in range(len(z_1)):
+    z_1[i][1] = 9
 # NumPy
 z_2[:, 1] = 9
 
 #############################################################
 # 4. Set the element at (second row, third column) of z to 5.
 # Python
-
+z_1[1][2] = 5
 # NumPy
-
+z_2[1, 2] = 5
 
 ##############
 print(z_1)
