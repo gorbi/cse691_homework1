@@ -32,7 +32,7 @@ z_2 = np.zeros((3, 5))
 # Python
 z_1[0][:] = [7 for i in z_1[0]]
 # NumPy
-
+z_2[0, :] = 7
 
 #####################################################
 # 3. Set all the elements in second column of z to 9.
