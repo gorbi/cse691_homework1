@@ -23,14 +23,14 @@ z_2 = None
 ################################################################
 # 1. Create a zeros array of size (3,5) and store in variable z.
 # Python
-z_1 = [[0 for i in range(5)] for j in range(3)]
+z_1 = [[0 for j in range(5)] for i in range(3)]
 # NumPy
 z_2 = np.zeros((3, 5))
 
 #################################################
 # 2. Set all the elements in first row of z to 7.
 # Python
-z_1[0][:] = [7 for i in z_1[0]]
+z_1[0] = [7 for j in z_1[0]]
 # NumPy
 z_2[0, :] = 7
 
@@ -39,7 +39,7 @@ z_2[0, :] = 7
 # Python
 
 # NumPy
-
+z_2[:, 1] = 9
 
 #############################################################
 # 4. Set the element at (second row, third column) of z to 5.
