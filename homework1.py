@@ -1,6 +1,7 @@
 import numpy as np
 import time
 import statistics as st
+import random
 
 # - Fill in the code below the comment Python and NumPy same as in example.
 # - Follow instructions in document.
@@ -138,9 +139,16 @@ d_1 = None; d_2 = None
 ################################################################################
 # 11. Normalize a 3x3 random matrix ((x-min)/(max-min)) and store to variable d.
 # Python
-
+d_1 = [[random.randint(0, 1337) for j in range(3)] for i in range(3)]
+d_1_1d = d_1[0].copy()
+for i in range(len(d_1)-1):
+    d_1_1d.extend(d_1[i+1])
+d_1_min_maxmin = [min(d_1_1d)]
+d_1_min_maxmin.append(max(d_1_1d)-d_1_min_maxmin[0])
+d_1 = [[(d_1[i][j]-d_1_min_maxmin[0])/(d_1_min_maxmin[1]) for j in range(len(d_1[0]))] for i in range(len(d_1))]
 # NumPy
-
+d_2 = np.random.randint(0, 1337, (3, 3))
+d_2 = (d_2 - d_2.min()) / (d_2.max()-d_2.min())
 
 ##########
 print(d_1)
