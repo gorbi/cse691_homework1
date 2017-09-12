@@ -171,9 +171,11 @@ e_1 = None; e_2 = None
 ###################################################################################
 # 14. Transpose matrix c, add 5 to all elements in matrix, and store to variable e.
 # Python
-
+e_1 = map(list, zip(*c_1))
+e_1 = [i for i in e_1]
+e_1 = [[e_1[i][j]+5 for j in range(len(e_1[0]))] for i in range(len(e_1))]
 # NumPy
-
+e_2 = c_2.T+5
 
 ##################
 print (np.sum(e_1 == e_2))
