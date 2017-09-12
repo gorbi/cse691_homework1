@@ -60,9 +60,10 @@ x_2 = None
 ##########################################################################################
 # 5. Create a vector of size 50 with values ranging from 50 to 99 and store in variable x.
 # Python
-
+x_1 = [x+50 for x in range(50)]
 # NumPy
-
+#x_2 = np.arange(50, 100)
+x_2 = np.linspace(50, 99, 50)
 
 ##############
 print(x_1)
@@ -75,9 +76,9 @@ y_2 = None
 ##################################################################################
 # 6. Create a 4x4 matrix with values ranging from 0 to 15 and store in variable y.
 # Python
-
+y_1 = [[j+i*4 for j in range(4)] for i in range(4)]
 # NumPy
-
+y_2 = np.arange(16).reshape(4, 4)
 
 ##############
 print(y_1)
@@ -90,9 +91,13 @@ tmp_2 = None
 ####################################################################################
 # 7. Create a 5x5 array with 1 on the border and 0 inside amd store in variable tmp.
 # Python
-
+tmp_1 = [[1 for j in range(5)] for i in range(5)]
+for i in range(len(tmp_1)-2):
+    for j in range(len(tmp_1)-2):
+        tmp_1[i+1][j+1] = 0
 # NumPy
-
+tmp_2 = np.ones(25).reshape(5, 5)
+tmp_2[1:4, 1:4] = 0
 
 ##############
 print(tmp_1)
@@ -108,21 +113,21 @@ c_1 = None; c_2 = None
 # Python
 
 # NumPy
-
+a_2 = np.arange(0, 5000, dtype='int').reshape(50, 100)
 
 ###############################################################################################
 # 9. Generate a 100x200 array of integer between 0 and 20,000 and store in variable b.
 # Python
 
 # NumPy
-
+b_2 = np.arange(0, 20000, dtype='int').reshape(100, 200)
 
 #####################################################################################
 # 10. Multiply matrix a and b together (real matrix product) and store to variable c.
 # Python
 
 # NumPy
-
+c_2 = a_2.dot(b_2)
 
 d_1 = None; d_2 = None
 ################################################################################
