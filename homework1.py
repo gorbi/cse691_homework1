@@ -111,21 +111,25 @@ c_1 = None; c_2 = None
 #############################################################################################
 # 8. Generate a 50x100 array of integer between 0 and 5,000 and store in variable a.
 # Python
-
+a_1 = [[int(j+i*100) for j in range(100)] for i in range(50)]
 # NumPy
 a_2 = np.arange(0, 5000, dtype='int').reshape(50, 100)
 
 ###############################################################################################
 # 9. Generate a 100x200 array of integer between 0 and 20,000 and store in variable b.
 # Python
-
+b_1 = [[int(j+i*200) for j in range(200)] for i in range(100)]
 # NumPy
 b_2 = np.arange(0, 20000, dtype='int').reshape(100, 200)
 
 #####################################################################################
 # 10. Multiply matrix a and b together (real matrix product) and store to variable c.
 # Python
-
+c_1 = [[0 for j in range(len(b_1[0]))] for i in range(len(a_1))]
+for i in range(len(a_1)):
+    for j in range(len(b_1[0])):
+        for k in range(len(a_1[0])):
+            c_1[i][j] += a_1[i][k]*b_1[k][j]
 # NumPy
 c_2 = a_2.dot(b_2)
 
