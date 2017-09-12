@@ -152,14 +152,14 @@ print(d_2)
 # Python
 
 # NumPy
-
+a_2 = a_2 - a_2.mean(axis=1, keepdims=True)
 
 ###################################################
 # 13. Subtract the mean of each column of matrix b.
 # Python
 
 # NumPy
-
+b_2 = b_2 - b_2.mean(axis=0, keepdims=True)
 
 ################
 print(np.sum(a_1 == a_2))
