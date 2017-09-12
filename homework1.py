@@ -87,7 +87,7 @@ x_2 = None
 # 5. Create a vector of size 50 with values ranging from 50 to 99 and store in variable x.
 # Python
 pythonStartTime = time.time()
-x_1 = [x+50 for x in range(50)]
+x_1 = [x for x in range(50, 99+1)]
 pythonEndTime = time.time()
 # NumPy
 numPyStartTime = time.time()
