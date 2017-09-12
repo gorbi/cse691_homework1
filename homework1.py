@@ -1,5 +1,6 @@
 import numpy as np
 import time
+import statistics as st
 
 # - Fill in the code below the comment Python and NumPy same as in example.
 # - Follow instructions in document.
@@ -150,14 +151,14 @@ print(d_2)
 ################################################
 # 12. Subtract the mean of each row of matrix a.
 # Python
-
+a_1 = [[a_1[i][j]-st.mean(a_1[i]) for j in range(len(a_1[0]))] for i in range(len(a_1))]
 # NumPy
 a_2 = a_2 - a_2.mean(axis=1, keepdims=True)
 
 ###################################################
 # 13. Subtract the mean of each column of matrix b.
 # Python
-
+b_1 = [[b_1[i][j]-st.mean([b_1[k][j] for k in range(len(b_1))]) for j in range(len(b_1[0]))] for i in range(len(b_1))]
 # NumPy
 b_2 = b_2 - b_2.mean(axis=0, keepdims=True)
 
