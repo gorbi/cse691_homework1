@@ -239,7 +239,8 @@ print('NumPy time: {0} sec.'.format(numPyEndTime-numPyStartTime))
 # 13. Subtract the mean of each column of matrix b.
 # Python
 pythonStartTime = time.time()
-b_1 = [[b_1[i][j]-st.mean([b_1[k][j] for k in range(len(b_1))]) for j in range(len(b_1[0]))] for i in range(len(b_1))]
+b_1_col_mean = [st.mean([b_1[j][i] for j in range(len(b_1))]) for i in range(len(b_1[0]))]
+b_1 = [[b_1[i][j]-b_1_col_mean[j] for j in range(len(b_1[0]))] for i in range(len(b_1))]
 pythonEndTime = time.time()
 # NumPy
 numPyStartTime = time.time()
